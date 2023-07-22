@@ -46,7 +46,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
  * @ap: argument pointer
  * @params: params struct
  *
- * Return : number of type printed
+ * Return: number of type printed
  */
 int get_print_func(char *s, va_list ap, params_t *params)
 {
@@ -62,7 +62,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
  * @s:format strig
  * @params: params struct
  *
- * Return : valid flag
+ * Return: valid flag
  */
 int get_flag(char *s, params_t *params)
 {
@@ -74,17 +74,17 @@ int get_flag(char *s, params_t *params)
 			i = params->plus_flag = 1;
 			break;
 		case ' ':
-                        i = params->space_flag = 1;
-                        break;
+			i = params->space_flag = 1;
+			break;
 		case '#':
-                        i = params->hashtag_flag = 1;
-                        break;
+			i = params->hashtag_flag = 1;
+			break;
 		case '-':
-                        i = params->minus_flag = 1;
-                        break;
+			i = params->minus_flag = 1;
+			break;
 		case '0':
-                        i = params->zero_flag = 1;
-                        break;
+			i = params->zero_flag = 1;
+			break;
 	}
 	return (i);
 }
@@ -94,11 +94,11 @@ int get_flag(char *s, params_t *params)
  * @s:format strig
  * @params: params struct
  *
- * Return : if modifier was valid
+ * Return: if modifier was valid
  */
 int get_modifier(char *s, params_t *params)
 {
-	int i = 0 ;
+	int i = 0;
 
 	switch (*s)
 	{
@@ -106,8 +106,8 @@ int get_modifier(char *s, params_t *params)
 			i = params->h_modifier = 1;
 			break;
 		case 'l':
-                        i = params->l_modifier = 1;
-                        break;
+			i = params->l_modifier = 1;
+			break;
 	}
 	return (i);
 }
@@ -118,7 +118,7 @@ int get_modifier(char *s, params_t *params)
  * @params: params struct
  * @ap: argument pointer
  *
- * Return : new pointer
+ * Return: new pointer
  */
 char *get_width(char *s, params_t *params, va_list ap)
 {
