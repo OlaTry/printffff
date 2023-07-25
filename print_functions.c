@@ -30,14 +30,14 @@ int print_char(va_list ap, params_t *params)
  */
 int print_int(va_list ap, params_t *params)
 {
-	long 1;
+	long l;
 
 	if (params->l_modifier)
 		l = va_arg(ap, long);
 	else if (params->h_modifier)
 		l = (short int)va_arg(ap, int);
 	else
-		l = (int)va_atg(ap, int);
+		l = (int)va_arg(ap, int);
 	return (print_number(convert(1, 10, 0, params), params));
 }
 
@@ -65,7 +65,7 @@ int print_string(va_list ap, params_t *params)
 
 	if (params->minus_flag)
 	{
-		if (params->precision != UNIT_MAX)
+		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else
@@ -75,7 +75,7 @@ int print_string(va_list ap, params_t *params)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 	{
-		if (params->precision != UNIT_MAX)
+		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else
@@ -107,7 +107,7 @@ int print_percent(va_list ap, params_t *params)
  */
 int print_s(va_list ap, params_t *params)
 {
-	char *str = var_arg(ap, char *);
+	char *str = va_arg(ap, char *);
 	char *hex;
 	int sum = 0;
 

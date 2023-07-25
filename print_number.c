@@ -46,7 +46,7 @@ int print_number(char *str, params_t *params)
 		str++;
 		i--;
 	}
-	if (params->precision != UNIT_MAX)
+	if (params->precision != UINT_MAX)
 		while (i++ < params->precision)
 			*--str = '0';
 	if (neg)
@@ -126,3 +126,4 @@ int print_number_left_shift(char *str, params_t *params)
 	while (i++ < params->width)
 		n += _putchar(pad_char);
 	return (n);
+}

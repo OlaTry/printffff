@@ -22,7 +22,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 		{"x", print_hex},
 		{"X", print_HEX},
 		{"p", print_address},
-		{"s", print_s},
+		{"s", print_S},
 		{"r", print_rev},
 		{"R", print_rot13},
 		{NULL, NULL}
@@ -64,7 +64,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
  *
  * Return: valid flag
  */
-int get_flag(char *s, params_t *params)
+int get_flag(char *S, params_t *params)
 {
 	int i = 0;
 
